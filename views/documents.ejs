@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script> var mobile = "<%= mob %>" 
+  </script>
+  <script src="/js/vdevice.js"></script>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="../css/gradient.css">
+    <link rel="stylesheet" href="/css/animations.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<style>
+    .wrapper {
+    text-align: center;
+}
+
+.button {
+    position:absolute;
+    top: 10%;
+}
+
+#container {
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+}
+
+</style>
+<body style='background-color: rgb(73, 69, 61);'> 
+
+    <p></p>
+      <p align="center" style="color: white; font-family: 'Courier New', Courier, monospace; font-size: x-large;" >Currently Active Documents</p>
+      <p align="center" style="color: white; font-family: 'Courier New', Courier, monospace; font-size: small;" >Only documents for your clearance level (<%= clevel %>) and below will be showed.</p>
+
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Written By</th>
+            <th scope="col">Link</th>
+            <th scope="col">ID</th>
+          </tr>
+        </thead>
+        <tbody>
+            <%docs.forEach(doc => {%>
+                <tr>
+                    <td><%= doc.title %></td>
+                    <td><%= doc.writtenby %></td>
+                    <td><%= doc.link %></td>
+                    <td><%= doc.id %></td>
+                  </tr>
+                <%})%>
+        </tbody>
+      </table>
+
+     
+      
+
+      <div id="container">
+        <button onClick="window.location.href = '/'"; id="but1" class="btn btn-dark">Go back</button>
+        <button onClick="window.location.reload();" id="but2" class="btn btn-primary">Refresh Data</button>
+        <button onClick="window.location.href = '/removedoc'"; id="but1" class="btn btn-primary">Remove a Document</button>
+
+      </div>
+
+
+      <p></p>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="/js/vdevice.js"></script>
+<script src="/js/notifications.js"></script>
+<link rel="stylesheet" href="/css/animations.css">
+
+  <script lang="javascript">
+function vadilateSubmittion() {
+  var b = document.getElementById("yeahs").value.replace(/\s+/g, '');
+  var c = document.getElementById("yeahs").value
+
+  if(b === "") {
+    notifyError("Please enter a new password!")
+    return
+  }
+
+  if(c.includes(" ")) {
+    notifyError("Your password can not contain spaces!")
+    return
+  }
+
+  if(c.length > 20) {
+    notifyError("Your password can not be longer than 20 characters.")
+    return
+  }
+
+}
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account dashboard</title>
+    <link href="/css/notifications.css" rel="stylesheet">
+  <link href="StyleSheet.css" rel="stylesheet">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style='background-color: rgb(73, 69, 61);'> 
+
+<div id="intx">
+  <img src="https://cdn2.iconfinder.com/data/icons/1-arrows-line-black/614/Arrow_Pointing_Left-512.png" width="60px"> <button class="btn btn-dark" onClick="window.location.href = '/'">Go Back</button>
+</div>
+
+  <div id="container">
+    <p style="color: rgb(0, 0, 0); font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: xx-large; font-weight: bold;" >Account Information</p>
+  
+  </div>
+  
+  
+  
+  <div id="enx">
+    <p style="color: rgb(0, 0, 0)"; >Username: <%= loginData.login %></p>
+    <p>Password: <input type="password" value="<%= loginData.password %>" id="myInput" readonly>
+    <input type="checkbox" onclick="myFunction()"> <img src="https://www.freeiconspng.com/uploads/eyes-icon-11.png"; height="20"><p></p></p>
+    <p style="color: rgb(0, 0, 0)"; >Assignment: <%= loginData.asg %></p>
+    <p style="color: rgb(0, 0, 0)"; >Clearance Level: <%= loginData.clearanceLevel %></p>
+  
+  </div>
+
+  
+
+  
+  
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+
+<script>
+  function myFunction2() {
+    var x = document.getElementById("yeahs");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
+
+<script>
+  function yourFunction() {
+    var x = document.getElementById("yeahs");
+      x.type = "password";  
+  }
+  </script>
+
+  <div id="container">
+  <p><br><br></p>
+  </div>
+  
+  <div id="enx">
+    <h1 style="color:black;">Change Password</h1>
+  </div>
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  
+  <form class="container" method="POST" action="/psrwd" target="dummyframe">
+
+    <div class="form-group">
+    
+      <p align="center" style="color: rgb(0, 0, 0); font-family:fantasy; font-size: x-large; text-align: center;" >Username</p>
+      <input class="form-control" name="link" placeholder="@<%= loginData.login %>" readonly>
+
+    <p><br></p>
+
+    
+      <p align="center" style="color: rgb(0, 0, 0); font-family:fantasy; font-size: x-large;" >Password</p>
+      <input id="yeahs" onkeydown="yourFunction()" class="form-control" name="newpass" placeholder="Enter your new password">
+    <div id="container">
+      <input type="checkbox" onclick="myFunction2()"> <img src="https://www.freeiconspng.com/uploads/eyes-icon-11.png"; height="20"><p></p>
+
+    </div>       
+
+    </select>
+    </div>
+    
+    <p><br></p>
+    <div id="container">
+    <button onclick="vadilateSubmittion()" class="btn btn-primary">Save</button>
+    </div>
+    </form>
+  
+  
+    <div id="container">
+      <p><br><br></p>
+      </div> 
+      
+ 
+      <div id="notification-area"></div>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var devcle = "<%= devcle%>"
+            var mobile = "<%= mob %>"
+        </script>
+        <script src="/js/vdevice.js"></script>
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+
+        <link rel="stylesheet" href="/css/animations.css">
+        <link rel="stylesheet" href="/css/welcome.css">
+        <link rel="stylesheet" href="/css/gradient.css">
+        <script src="/js/notifications.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <style>
+
+.wrapper {
+    position: absolute;
+    transition: .5s ease;
+    top: 28%;
+    left: 47%
+}
+
+.button {
+    position: absolute;
+    top: 28%;
+}
+
+.textbox {
+    position: absolute;
+    transition: .5s ease;
+    top: 20%;
+    left: 44.30%
+}
+
+.text {
+    position: absolute;
+    transition: .5s ease;
+    top: 10%;
+    left: 35%
+}
+
+#container {
+  text-align: center;
+}
+
+#righte {
+    text-align: right;
+}
+
+#btnhome {  
+    margin-left: 1000px;
+    width: 90px;
+    right: 10px;
+    height: 12px;   
+    background: transparent;
+    border: none;
+    font-size:14px;
+    font-weight:700;
+}
+
+
+
+    </style>
+    
+
+<body style='background-color: rgb(64, 65, 64);'> 
+
+<form method="post" action="logoutin">
+<div id="btnhome"></div>
+<img width="10x" height="10px"src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png"> <button class="btn btn-dark" onClick="window.location.href = '/'">Log Out</button>
+</form>
+  
+    <div id="container">
+    <img src="https://media.discordapp.net/attachments/912005788044759101/912020850654453760/CJOC.png?width=250&height=321" alt="CJOC" width="250" height="350">
+        <p><br></p>
+    <h1 style='color: white;'>Welcome to the Canadian Joint Operations Command databse,</h1>
+    <h1 style='color: rgb(134, 179, 11);'><%= cuser %> </h1>
+    <p><br></p>
+
+    
+    </div>
+
+
+    <div id="container">
+        <button onClick="window.location.href = '/documents'"; id="authbot" class="btn btn-primary">See Documents</button>
+        <button onClick="window.location.href = '/removedoc'"; id="urmom" class="btn btn-primary">Remove a Document</button>
+        <button onClick="window.location.href = '/newdocument'"; id="but2" class="btn btn-primary">Add Document</button>
+        <button onClick="window.location.href = '/assignments'"; id="registers" class="btn btn-primary">See Assignments</button>
+        <button onClick="window.location.href = '/accdash'"; id="but3" class="btn btn-primary">Account Dashboard</button>
+        <button onClick="window.location.href = '/reg'"; id="registera" class="btn btn-primary" disabled>Register Users</button>
+
+      </div>
+
+<script src="/js/authorization.js"></script>
+
+
+<div id="notification-area"></div>
+
+
+<script defer>
+
+var arr = [
+    "Welcome, <%= cuser %>!",
+    "Hey, <%= cuser %>, how's it going?",
+    "Good day, <%= cuser %>.",
+    "How has your day been, <%= cuser %>?",
+    "Hey <%= cuser %>, how was your day?", 
+    "Hey.. <%= cuser %>, I dropped the soap.. mind helping me?", 
+    "oh shoot! mark look busy, <%= cuser %> just opened the website",
+    "yo <%= cuser %>, interested in buying solar panels??", 
+    "Hello, <%= cuser %>, would you like to play a game?", 
+    "hey... <%= cuser %> wanna go to dinner tonight...? 👉👈" 
+]
+
+var item = arr[Math.floor(Math.random()*arr.length)];
+
+    notifyInfo(item)
+
+</script>
+
+</body>
+
+</html>

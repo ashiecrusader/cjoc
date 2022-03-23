@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script> var mobile = "<%= mob %>" 
+  </script>
+<script src="/js/vdevice.js"></script>
+
+<script src="/js/notifications.js"></script>
+<link rel="stylesheet" href="../css/gradient.css">
+<link rel="stylesheet" href="/css/animations.css">
+
+
+  <style>
+        #btnhome {  
+    margin-left: 1000px;
+    width: 90px;
+    right: 10px;
+    height: 12px;   
+    background: transparent;
+    border: none;
+    font-size:14px;
+    font-weight:700;
+}
+
+
+p {
+  color: rgb(221, 221, 221);
+}
+
+
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link href="/css/notifications.css" rel="stylesheet">
+  <link href="StyleSheet.css" rel="stylesheet">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style='background-color: rgba(73, 69, 61, 0);'> 
+
+  <div id="btnhome"></div>
+  <img width="10x" height="10px"src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png"> <button class="btn btn-dark" onClick="window.location.href = '/'">Go Back</button>
+
+
+  <div id="container">
+    <p style="color: rgb(255, 255, 255); font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: xx-large; font-weight: 900px;" >Assignments</p>
+  
+    <% casg.forEach(asg => { %>
+
+   <p><%= asg.title %> -- <%=asg.asgto %> <br> <strong>Due</strong> <%= asg.due %> (yyyy-mm-dd) <br> ID: <%= asg.id %> </p>
+        
+    <% }) %>
+        
+    <br><br>
+    <button onClick="window.location.href = '/regasg'"; id="butr" class="btn btn-primary" disabled>Assign</button>
+
+
+  </div>
+  
+  
+  <script>
+
+    var devcle = "<%= devcle %>"
+
+    if(parseInt(devcle) >= 2) {
+
+        document.getElementById('butr').removeAttribute('disabled')
+    }
+
+  </script>
+ 
+      <div id="notification-area"></div>
+
+</body>
+</html>

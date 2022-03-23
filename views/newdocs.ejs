@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script> var mobile = "<%= mob %>" 
+    </script>
+  <script src="/js/vdevice.js"></script>
+  <script src="/js/notifications.js"></script>
+  <link rel="stylesheet" href="../css/gradient.css">
+  <link rel="stylesheet" href="/css/animations.css">
+
+    <script lang="javascript">
+ function vadilateSubm() {
+
+    vadilateLink = document.getElementById("1").value.replace(/\s+/g, '');
+    vadilateName = document.getElementById("2").value.replace(/\s+/g, '');
+    vadilatewrit = document.getElementById("3").value.replace(/\s+/g, '');
+    vadilateCle = document.getElementById("4").value.replace(/\s+/g, '');
+
+    if(vadilateLink === "" || vadilateName === "" || vadilatewrit === "" || vadilateCle === "") {
+
+        notifyError("Document not registered; Please fill out all of the fields!")
+        return
+    }
+
+    notifySuccess("Successfully registered document!")
+
+    setTimeout(() => {
+      
+    document.getElementById("1").value = ""
+    document.getElementById("2").value = ""
+    document.getElementById("3").value = ""
+    }, 1500);
+    
+}
+    
+     </script>
+
+<style>
+        #btnhome {  
+    margin-left: 1000px;
+    width: 90px;
+    right: 10px;
+    height: 12px;   
+    background: transparent;
+    border: none;
+    font-size:14px;
+    font-weight:700;
+}
+
+
+#tired {
+    background-color: transparent;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document registry</title>
+    <link href="/css/notifications.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style='background-color: rgb(73, 69, 61);'> 
+
+
+    <div id="btnhome"></div>
+    <img width="10x" height="10px"src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1200px-HD_transparent_picture.png"> <button class="btn btn-dark" onClick="window.location.href = '/'">Go Back</button>
+
+
+
+
+    <p align="center" style="color: rgb(90, 90, 90); font-family:'Courier New', Courier, monospace; font-size: xx-large; font-weight: bold;" >Document Registry</p>
+
+
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+<form class="container" method="POST" action="/gaz" target="dummyframe">
+
+    <div class="form-group" id="tired">
+
+        <p align="center" style="color: rgb(211, 211, 211); font-family:fantasy; font-size: x-large;" >Document Link</p>
+        <input style="background-color:transparent;" id="1" class="form-control" name="link" placeholder="Document Link">
+        <p><br></p>
+           
+        <p align="center" style="color: rgb(211, 211, 211); font-family:fantasy; font-size: x-large;" >Document Name</p>
+        <input id="2" class="form-control" style="background-color:transparent;" name="name" placeholder="Document Name">
+        <p><br></p>
+           
+        <p align="center" style="color: rgb(211, 211, 211); font-family:fantasy; font-size: x-large;" >Who was the document written by?</p>
+        <input id="3" class="form-control" name="writtenby" style="background-color:transparent;" placeholder="Written by?">
+        <p><br></p>
+           
+        <p align="center" style="color: rgb(211, 211, 211); font-family:fantasy; font-size: x-large;" >Document Clearance Level</p>
+        <select id="4" class="form-control" style="background-color:transparent;" name="cle">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+</div>
+
+
+
+
+<p><br></p>
+<div id="container">
+<button  onclick="vadilateSubm()" class="btn btn-success">Register Document</button>
+</div>
+</form>
+
+<p><br></p>
+
+<div id="notification-area"></div>
+
+</body>
+</html>

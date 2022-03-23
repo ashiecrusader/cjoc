@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            window.location.href = "/"
+        }
+
+        const mob = "<%= mob %>"
+
+        if (mob === "true") {
+            window.location.href = "/"
+        }
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 10000);
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="/css/gradient.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    #container {
+  text-align: center;
+}
+</style>
+<body style='background-color: rgb(73, 69, 61);'> 
+
+    <p><br><br><br></p>
+    <div id="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/53/53116.png" alt="Error" width="250" height="250">
+        <p><br></p>
+
+        <h1 id="mejn" style='color: white;'>This website is not supported for mobile devices.</h1>
+        <p id="probsz" style="color: white;">and it probably won't be.</p>
+
+
+    </div>
+
+</body>
+</html>
